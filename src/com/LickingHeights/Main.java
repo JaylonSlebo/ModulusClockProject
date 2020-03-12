@@ -26,12 +26,13 @@ public class Main {
         System.out.println("Type in an amount of minutes");
 
         minutes = keyboard.nextInt();
-        hours = minutes >= 60 ? hours+minutes/60 : hours;
+        hours = minutes >= 60 ? hours+minutes/60 : hours%12;
+        minutes = hours >= 13 ? ++hours :minutes%60;
 
 
         
 
-        System.out.println("The time is "+ (hours%12) +":"+ minutes);
+        System.out.println("The time is "+ (hours%12) +":"+ (minutes%60));
 
     }
 
